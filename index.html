@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Небрус — квартиры в Приэльбрусье</title>
+    <meta name="description" content="Прямые контакты Рамазана. Три уютные квартиры у подножия Эльбруса. Звоните без комиссии.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f5f7fc 0%, #eef2f5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 10% 20%, rgba(140, 170, 190, 0.08) 1%, transparent 1%);
+            background-size: 32px 32px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .card {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 56px;
+            padding: 40px 32px 48px;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.02);
+            text-align: center;
+            border: 1px solid rgba(255,255,240,0.5);
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1E3C2C, #2B5E3B);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: #4a627a;
+            margin-bottom: 32px;
+            border-bottom: 1px solid #e2e8f0;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        .owner {
+            background: #ecfdf5;
+            padding: 14px 18px;
+            border-radius: 80px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 32px;
+            font-weight: 500;
+            color: #0b3b2a;
+            font-size: 1rem;
+        }
+
+        .owner span {
+            background: #2b6e44;
+            color: white;
+            border-radius: 40px;
+            padding: 4px 12px;
+            font-size: 0.8rem;
+        }
+
+        .apartments {
+            background: #fef9e6;
+            border-radius: 28px;
+            padding: 20px 16px;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .apt-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0e8d0;
+        }
+
+        .apt-item:last-child {
+            border-bottom: none;
+        }
+
+        .apt-icon {
+            font-size: 1.4rem;
+            min-width: 40px;
+        }
+
+        .apt-text {
+            font-size: 0.95rem;
+            color: #3a5a48;
+            line-height: 1.4;
+        }
+
+        .apt-title {
+            font-weight: 700;
+            color: #1f3e34;
+        }
+
+        .contact-block {
+            background: #ffffff;
+            border-radius: 36px;
+            padding: 20px 20px;
+            margin: 16px 0;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eef2f0;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f2f0;
+        }
+
+        .contact-row:last-child {
+            border-bottom: none;
+        }
+
+        .contact-label {
+            font-weight: 500;
+            color: #2c5a48;
+            font-size: 0.9rem;
+            background: #ecfdf5;
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+
+        .phone-number {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1f3e34;
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        .phone-number:hover {
+            color: #0f6e44;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 26px;
+            border-radius: 60px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.15s;
+            font-size: 1rem;
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-wa:hover {
+            background: #20b859;
+            transform: translateY(-2px);
+        }
+
+        .btn-tg {
+            background: #26A5E4;
+            color: white;
+        }
+
+        .btn-tg:hover {
+            background: #1e91c9;
+            transform: translateY(-2px);
+        }
+
+        .btn-call {
+            background: #1f3e34;
+            color: white;
+        }
+
+        .btn-call:hover {
+            background: #123127;
+        }
+
+        .info {
+            margin: 28px 0 20px;
+            font-size: 0.9rem;
+            color: #446b5a;
+            background: #fefce8;
+            padding: 14px;
+            border-radius: 48px;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #e2e8f0, transparent);
+        }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 500px) {
+            .card {
+                padding: 28px 20px 36px;
+            }
+            .phone-number {
+                font-size: 1.1rem;
+            }
+            .btn {
+                padding: 10px 20px;
+            }
+            .contact-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Небрус</h1>
+        <div class="tagline">квартиры у подножия Эльбруса</div>
+
+        <div class="owner">
+            🏔️ Хозяин — Рамазан из Жанхотеко
+            <span>без комиссии</span>
+        </div>
+
+        <!-- 3 квартиры с описанием -->
+        <div class="apartments">
+            <div class="apt-item">
+                <div class="apt-icon">🏔️</div>
+                <div class="apt-text">
+                    <span class="apt-title">Квартира 1</span> (2-комнатная) — вид на Чегет
+                </div>
+            </div>
+            <div class="apt-item">
+                <div class="apt-icon">🌲</div>
+                <div class="apt-text">
+                    <span class="apt-title">Квартиры 2 и 3</span> (1-комнатные) — вид на ущелье
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-block">
+            <div class="contact-row">
+                <span class="contact-label">📞 Рамазан (основной)</span>
+                <a href="tel:+79990015466" class="phone-number">+7 (999) 001-54-66</a>
+            </div>
+            <div class="contact-row">
+                <span class="contact-label">👤 Второй хозяин (доп.)</span>
+                <a href="tel:+79287165558" class="phone-number">+7 (928) 716-55-58</a>
+            </div>
+
+            <div class="buttons">
+                <a href="https://wa.me/79990015466" class="btn btn-wa">
+                    💬 WhatsApp (Рамазан)
+                </a>
+                <a href="tg://resolve?domain=shogenramazan" class="btn btn-tg">
+                    ✈️ Telegram
+                </a>
+                <a href="tel:+79990015466" class="btn btn-call">
+                    📱 Позвонить Рамазану
+                </a>
+            </div>
+        </div>
+
+        <div class="info">
+            ⚡ Нашли на Авито? Звоните по любому номеру — цена ниже, чем на площадке.<br>
+            🏡 Три уютные квартиры. Свежий ремонт, горный воздух, виды.
+        </div>
+
+        <hr>
+
+        <div class="footer-note">
+            nebrus.ru — прямые контакты. Бронируйте без посредников.
+        </div>
+    </div>
+</body>
+</html>
